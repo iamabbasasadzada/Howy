@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/admin.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="containerofall">
+      <div class="containerofimageup">
+        <input
+          type="file"
+          id="image-input"
+          accept="image/jpeg, image/png, image/jpg"
+        />
+
+        <div id="display-image"></div>
+      </div>
+
+      <div class="gname item">
+        <input
+          type="text"
+          id="gname"
+          class="form__input"
+          autocomplete="off"
+          placeholder=" "
+          required
+        />
+        <label for="gname" class="form__label">Game Name</label>
+      </div>
+      <br />
+      <div class="price item">
+        <input
+          type="text"
+          id="prices"
+          class="form__input"
+          autocomplete="off"
+          placeholder=" "
+          required
+        />
+        <label for="prices" class="form__label">Price</label>
+      </div>
+      <br />
+      <div class="about item">
+        <input
+          type="text"
+          id="aboutg"
+          class="form__input"
+          autocomplete="off"
+          placeholder=" "
+          required
+        />
+        <label for="aboutg" class="form__label">About Game</label>
+      </div>
+      <br />
+      <div class="rdate item">
+        <input
+          type="date"
+          id="rdatea"
+          class="form__input"
+          autocomplete="off"
+          placeholder=" "
+          required
+        />
+        <label for="rdatea" class="form__label">Relase Date</label>
+      </div>
+      <br />
+      <div class="gtype item">
+        <select name="gtyp" class="gtypeselects" id="gtypee" multiple>
+          <option value="1">Volvo</option>
+        </select>
+        <label for="gtyp" class="">Game Types</label>
+      </div>
+      <br />
+      <div class="publis item">
+        <input
+          type="text"
+          id="publs"
+          class="form__input"
+          autocomplete="off"
+          placeholder=" "
+          required
+        />
+        <label for="publs" class="form__label">Publisher</label>
+      </div>
+      <br />
+      <div class="platfor item">
+        <select
+          name="platfor"
+          class="platforselect"
+          id="plattt"
+          multiple
+        ></select>
+        <label for="platfor" class="">Platforms</label>
+      </div>
+      <br />
+      <div>
+        <button class="custom-btn btn-1" id="addgamebtn">Add Game</button>
+      </div>
+      <div>
+        <button
+          class="custom-btn btn-1"
+          id="addcategorypage"
+          onclick="window.location.href='/categoryadmin.html'"
+        >
+          Category
+        </button>
+      </div>
+      <div>
+        <button
+          class="custom-btn btn-1"
+          id="addplatformpage"
+          onclick="window.location.href='/platform.html'"
+        >
+          Platform
+        </button>
+      </div>
+      <div>
+        <button
+          class="custom-btn btn-1"
+          id="commentadmin"
+          onclick="window.location.href='/commentadmin.html'"
+        >
+          Comments
+        </button>
+      </div>
+    </div>
+    <br />
+    <div class="tablediv">
+      <table class="game-table" id="game-table"></table>
+    </div>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="./assets/js/admin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script>
+      //   localStorage.setItem(
+      //     "games",
+      //     JSON.stringify([
+      //       {
+      //         id: 1,
+      //         gname: "ELDEN RING",
+      //         price: 18,
+      //         imgsrc: "./assets/images/elden-ring-volcano-manor-cover.png",
+      //         aboutg:
+      //           "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+      //         rdate: "25.02.2022",
+      //         gtype: "RPG,Souls-Like,PVP",
+      //         publ: "From-Software",
+      //         plat: "Steam",
+      //       },
+      //       {
+      //         id: 2,
+      //         gname: "Monster Hunter: World",
+      //         price: 20,
+      //         imgsrc: "./assets/images/thumb-1920-900718.jpg",
+      //         aboutg:
+      //           "Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience.",
+      //         rdate: "09.09.2018",
+      //         gtype: "RPG,Open-World,Action",
+      //         publ: "CapCom",
+      //         plat: "Steam",
+      //       },
+      //       {
+      //         id: 3,
+      //         gname: "Red Dead Redemption 2",
+      //         price: 25,
+      //         imgsrc:
+      //           "./assets/images/red_dead_redemption_2___wallpaper_v_2_by_3demerzel_ddhljyu-fullview.jpg",
+      //         aboutg:
+      //           "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, RDR2 is the epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age.",
+      //         rdate: "05.12.2019",
+      //         gtype: "Open-World,Adventure,Action",
+      //         publ: "RockStar",
+      //         plat: "Steam",
+      //       },
+      //       {
+      //         id: 4,
+      //         gname: "God of War",
+      //         price: 40,
+      //         imgsrc:
+      //           "./assets/images/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7.jfif",
+      //         aboutg:
+      //           "The latest free update for Squad brings the Australian Army to the battle as our eighth faction. This light infantry focused faction has a Bullpup primary build and a unique Combat Engineer split to offer players expanded options on the field.",
+      //         rdate: "19.02.2020",
+      //         gtype: "Action,MMO,RPG",
+      //         publ: "Sony",
+      //         plat: "Steam",
+      //       },
+      //       {
+      //         id: 5,
+      //         gname: "Grand Theft Auto V",
+      //         price: 16,
+      //         imgsrc: "./assets/images/5a217f585bafe345a44878f2.jfif",
+      //         aboutg:
+      //           "Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.",
+      //         rdate: "14.04.2015",
+      //         gtype: "Open-World,Adventure,Action",
+      //         publ: "RockStar",
+      //         plat: "Steam",
+      //       },
+      //       {
+      //         id: 6,
+      //         gname: "Dota 2",
+      //         price: 19,
+      //         imgsrc: "./assets/images/dota-2.jpg",
+      //         aboutg:
+      //           "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.",
+      //         rdate: "09.07.2013",
+      //         gtype: "Moba,Multiplayer,Action",
+      //         publ: "Valve",
+      //         plat: "Steam",
+      //       },
+      //     ])
+      //   );
+
+      //   localStorage.setItem("comments", JSON.stringify([]));
+    </script> -->
+    <!-- <script>
+      // localStorage.setItem(
+      //   "gametype",
+      //   JSON.stringify([
+      //     {
+      //       id: 1,
+      //       tname: "Souls Like",
+      //     },
+      //     {
+      //       id: 2,
+      //       tname: "Action",
+      //     },
+      //     {
+      //       id: 3,
+      //       tname: "RPG",
+      //     },
+      //     {
+      //       id: 4,
+      //       tname: "Moba",
+      //     },
+      //     {
+      //       id: 5,
+      //       tname: "Multiplayer",
+      //     },
+      //     {
+      //       id: 6,
+      //       tname: "Open-World",
+      //     },
+      //     {
+      //       id: 7,
+      //       tname: "Adventure",
+      //     },
+      //     {
+      //       id: 8,
+      //       tname: "MMO",
+      //     },
+      //     {
+      //       id: 9,
+      //       tname: "PVP",
+      //     },
+      //   ])
+      // );
+
+      // localStorage.setItem(
+      //   "platform",
+      //   JSON.stringify([
+      //     {
+      //       id: 1,
+      //       pname: "Steam",
+      //     },
+      //     {
+      //       id: 2,
+      //       pname: "Origin",
+      //     },
+      //     {
+      //       id: 3,
+      //       pname: "Epic Games",
+      //     },
+      //     {
+      //       id: 4,
+      //       pname: "PS4",
+      //     },
+      //     {
+      //       id: 5,
+      //       pname: "XBOX One",
+      //     },
+      //     {
+      //       id: 6,
+      //       pname: "PS5",
+      //     },
+      //   ])
+      // );
+      // localStorage.setItem("games", JSON.stringify([{}]));
+    </script> -->
+  </body>
+</html>

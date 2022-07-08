@@ -1,0 +1,16 @@
+*{
+box-sizing: border-box;
+}
+.Custom-Icon{
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+}
+.account-pages{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+}
+:root{
+    background-color: #050E2D;
+}

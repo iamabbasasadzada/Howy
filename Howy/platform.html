@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/admin.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="containerofallplat mg-t-5">
+      <div class="plat item">
+        <input
+          type="text"
+          id="platn"
+          class="form__input"
+          autocomplete="off"
+          placeholder=" "
+          required
+        />
+        <label for="platn" class="form__label">Platform Name</label>
+      </div>
+      <br />
+      <div>
+        <button class="custom-btn btn-1" id="addplatform">Add Platform</button>
+      </div>
+    </div>
+    <div class="tablediv2">
+      <table class="plat-table" id="plat-table"></table>
+    </div>
+    <script src="./assets/js/platform.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

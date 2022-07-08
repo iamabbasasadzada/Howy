@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/details.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav containernav">
+        <!-- logo -->
+        <a href="HomePage.html" class="logo">Ho<span>wy</span></a>
+        <div class="nav-icons">
+          <i class="bx bx-bell bx-tada" id="bell-icon"><span></span></i>
+          <i class="bx bx-cart" id="cart-icon"></i>
+          <div class="menu-icon">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </div>
+        <!-- menu -->
+        <div class="menu">
+          <img src="" alt="" />
+          <div class="navbar">
+            <ul>
+              <li><a href="HomePage.html">Home</a></li>
+              <li><a href="#">All Games</a></li>
+              <li><a href="#">Trending Games</a></li>
+              <li><a href="#">Contac Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="gamedetails"></section>
+    <hr class="hrstyle-two"/ >
+    <section class="comment-section">
+      <h1 class="commentheadd">Type Your Comment</h1>
+      <div class="commentinputs">
+        <div class="fnameform item">
+          <input
+            type="text"
+            id="fname"
+            class="form__input"
+            autocomplete="off"
+            placeholder=" "
+            required
+          />
+          <label for="fname" class="form__label">First name</label>
+        </div>
+        <div class="lnameform">
+          <input
+            type="text"
+            id="lname"
+            class="form__input"
+            autocomplete="off"
+            placeholder=" "
+            required
+          />
+          <label for="lname" class="form__label">Last name</label>
+        </div>
+        <div class="commentform">
+          <input
+            type="textarea"
+            id="comm"
+            class="form__input"
+            autocomplete="off"
+            placeholder=" "
+            required
+          />
+          <label for="comm" class="form__label">Comment</label>
+        </div>
+        <div class="buttonofcom">
+          <button class="custom-btn btn-3 comment" id="commentbtn">
+            <span>Submit</span>
+          </button>
+        </div>
+      </div>
+      <br />
+      <hr class="hrstyle-two"/ >
+      <div class="comments" id="comments">
+        <h1 class="commentheadd">Comments</h1>
+      </div>
+    </section>
+    <div class="modalofcart" id="modalofcart">
+      <div class="tablediv2">
+        <table class="cart-table" id="cart-table"></table>
+      </div>
+        <button class="btn btn-primary btn-close" id="btn-close" type="button">Close</button>
+        <span class="total" id="totalspan"></span>
+      </div>
+    </div>
+    <script src="./assets/js/details.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
